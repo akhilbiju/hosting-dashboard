@@ -9,7 +9,7 @@ export class ProgressBarComponent implements OnInit {
   @Input() total;
   @Input() consumed;
   @Input() isSubDomain;
-  fillValue = '50%';
+  fillValue = '0%';
 
   constructor() {}
 

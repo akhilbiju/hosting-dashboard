@@ -1,6 +1,6 @@
 <div class="header">
   <h1>Site details</h1>
-  <app-add-site></app-add-site>
+  <app-add-site (addEvent)="addEvent()"></app-add-site>
 </div>
 <div class="controls">
   <div class="entry-select">
@@ -23,12 +23,5 @@
   </div>
 </div>
 <div class="card-list">
-  <!-- <div class="card-header">
-    <span>Domain & Plan Name</span>
-    <span>Storage</span>
-    <span>Monthly Visitor</span>
-    <span>Domains</span>
-    <span>Status</span>
-  </div> -->
   <app-card *ngFor="let site of currentData" [siteData]="site"></app-card>
 </div>

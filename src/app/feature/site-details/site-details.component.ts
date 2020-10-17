@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../mock-server/data.service';
 
 @Component({
   selector: 'app-site-details',
@@ -7,60 +8,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteDetailsComponent implements OnInit {
   entryCount = 10;
-  siteData = [
-    {
-      id: 1,
-      domain: 'xyz.xom',
-      storage: '500gb',
-      usedStorage: '200gb',
-      domainTag: 'Primary',
-      availableDomains: 10,
-      usedDomains: 4,
-      monthlyVisitorCapacity: 10000,
-      monthlyVisitor: 100,
-      subDomain: [
-        {
-          id: 11,
-          name: 'adsada.com',
-          usedStorage: '10gb',
-          domainTag: 'primary',
-          monthlyVisitor: 1100,
-        },
-        {
-          id: 12,
-          name: 'adsaasdadda.com',
-          usedStorage: '10gb',
-          domainTag: 'staging',
-          monthlyVisitor: 1100,
-        },
-      ],
-    },
-    {
-      id: 2,
-      domain: 'abc.com',
-      storage: '500gb',
-      usedStorage: '200gb',
-      domainTag: 'Primary',
-      status: 'active',
-      availableDomains: 10,
-      usedDomains: 10,
-      monthlyVisitorCapacity: 10000,
-      monthlyVisitor: 1000,
-      subDomain: [],
-    },
-  ];
+  siteData = [];
   currentData = [];
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {
-    this.currentData = this.siteData.slice();
+  /**
+   * Get data from mock server
+   */
+  getData() {
+    this.dataService.getSiteDetails().subscribe((data) => {
+      this.siteData = data;
+      this.currentData = data;
+    });
   }
 
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  /**
+   * New data add event
+   */
+  addEvent() {
+    this.getData();
+  }
+
+  /**
+   * Handle entry per change event
+   */
   entryChnage() {
     this.currentData = this.siteData.slice(0, this.entryCount);
   }
 
+  /**
+   * Handle search
+   * @param event search keyword
+   */
   search(event) {
     const keyWord = event.target.value;
     this.currentData = this.siteData.filter((domainData: any) =>

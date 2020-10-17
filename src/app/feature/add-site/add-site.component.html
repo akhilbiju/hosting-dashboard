@@ -3,7 +3,12 @@
   Add New Site
 </button>
 
-<div id="popup1" class="overlay" [ngClass]="{ active: showModal }">
+<div
+  id="popup1"
+  class="overlay"
+  [formGroup]="masterForm"
+  [ngClass]="{ active: showModal }"
+>
   <div class="popup">
     <div class="pop-header">
       <h3>Add Domain Details</h3>
@@ -13,26 +18,57 @@
       <div class="static-fields">
         <div class="input-container">
           <span>Domain Name *</span>
-          <input />
+          <input
+            formControlName="domain"
+            [ngClass]="{
+              error:
+                masterForm.get('domain').touched &&
+                masterForm.get('domain').errors
+            }"
+          />
         </div>
         <div class="input-container">
           <span>Storage *</span>
-          <input />
+          <input
+            type="number"
+            formControlName="storage"
+            [ngClass]="{
+              error:
+                masterForm.get('storage').touched &&
+                masterForm.get('storage').errors
+            }"
+          />
         </div>
-        <div class="input-container">
+        <div [formGroup]="firstSub" class="input-container">
           <span>Subdomain</span>
-          <input />
+          <input formControlName="name" />
         </div>
         <div class="input-container">
           <span>Monthly Visitor *</span>
-          <input />
+          <input
+            type="number"
+            formControlName="monthlyVisitorCapacity"
+            [ngClass]="{
+              error:
+                masterForm.get('monthlyVisitorCapacity').touched &&
+                masterForm.get('monthlyVisitorCapacity').errors
+            }"
+          />
         </div>
       </div>
-      <div class="dynamic-fields"><input /><input /> <input /><input /></div>
+      <div class="dynamic-fields">
+        <div *ngFor="let batch of otherSub; let i = index" [formGroup]="batch">
+          <input formControlName="name" />
+          <span (click)="deleteSub(i)" class="delete-sub">&times;</span>
+        </div>
+      </div>
+      <button class="add-subdomain" (click)="addSub()">Add More</button>
     </div>
     <div class="footer">
       <button (click)="close()" class="button secondary-button">Close</button>
-      <button class="button primary-button">Save Changes</button>
+      <button class="button primary-button" (click)="submit()">
+        Save Changes
+      </button>
     </div>
   </div>
 </div>
