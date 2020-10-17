@@ -90,17 +90,16 @@ export class AddSiteComponent implements OnInit {
     };
     const domainData = { ...metaData, ...this.masterForm.value };
     domainData['storage'] = domainData['storage'] + 'gb';
+    domainData.subDomain = domainData.subDomain.filter((domain) => domain.name);
     for (let index = 0; index < domainData.subDomain.length; index++) {
       domainData.subDomain[index] = {
         ...domainData.subDomain[index],
         ...subDomainMetaData,
       };
-      if (!domainData.subDomain[index].name) {
-        domainData.subDomain.splice(index, 1);
-      }
     }
     this.dataService.addSite(domainData);
     this.addEvent.emit();
+    this.close();
   }
 
   /**
