@@ -1,0 +1,36 @@
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+.progress-bar {
+  height: 14px;
+  background: #33cc86;
+  border-radius: 5px;
+}
+.background {
+  background: #e3e5e8;
+  border-radius: 5px;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.sub-domain {
+  align-items: center;
+  flex-direction: row;
+}
+
+.sub-domain .label {
+  order: -1;
+  margin-right: 3px;
+}
+
+.sub-domain .background {
+  background: transparent;
+  width: 100px;
+}

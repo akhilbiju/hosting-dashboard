@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  height: 100%;
+}
+
+app-main {
+  display: flex;
+  flex: 1;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    flex-direction: column;
+  }
+}

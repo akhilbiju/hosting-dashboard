@@ -1,0 +1,22 @@
+.item {
+  position: relative;
+  transform: translateX(-15px);
+}
+
+.item p {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  top: 25px;
+  left: 20px;
+  font-size: 10px;
+}
+
+svg {
+  transform: rotate(-90deg);
+}
+
+.circle_animation {
+  stroke-dasharray: 126;
+  stroke-dashoffset: 0;
+}

@@ -1,0 +1,38 @@
+<button (click)="openModal()" class="button add-button">
+  <span class="plus-sign">+</span>
+  Add New Site
+</button>
+
+<div id="popup1" class="overlay" [ngClass]="{ active: showModal }">
+  <div class="popup">
+    <div class="pop-header">
+      <h3>Add Domain Details</h3>
+      <a class="close" (click)="close()">&times;</a>
+    </div>
+    <div class="content">
+      <div class="static-fields">
+        <div class="input-container">
+          <span>Domain Name *</span>
+          <input />
+        </div>
+        <div class="input-container">
+          <span>Storage *</span>
+          <input />
+        </div>
+        <div class="input-container">
+          <span>Subdomain</span>
+          <input />
+        </div>
+        <div class="input-container">
+          <span>Monthly Visitor *</span>
+          <input />
+        </div>
+      </div>
+      <div class="dynamic-fields"><input /><input /> <input /><input /></div>
+    </div>
+    <div class="footer">
+      <button (click)="close()" class="button secondary-button">Close</button>
+      <button class="button primary-button">Save Changes</button>
+    </div>
+  </div>
+</div>

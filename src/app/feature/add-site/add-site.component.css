@@ -1,0 +1,113 @@
+.button {
+  outline: none;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button {
+  background: #5b7cfd;
+  color: white;
+}
+
+.plus-sign {
+  font-size: 10px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+.overlay.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+}
+
+.pop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup h3 {
+  margin: 0px;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+.popup .close:hover {
+  color: #06d85f;
+}
+.popup .content {
+  overflow: auto;
+  margin: 15px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup .footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.primary-button {
+  background: #5b7cfd;
+  color: white;
+  padding: 10px;
+  margin-left: 5px;
+}
+
+.secondary-button {
+  border: 0.5px solid#e2d3d3;
+  padding: 10px;
+}
+
+.static-fields {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input-container,
+.dynamic-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container span {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.input-container input {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .popup {
+    width: 70%;
+  }
+}

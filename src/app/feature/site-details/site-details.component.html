@@ -1,0 +1,34 @@
+<div class="header">
+  <h1>Site details</h1>
+  <app-add-site></app-add-site>
+</div>
+<div class="controls">
+  <div class="entry-select">
+    <span>Show</span>
+    <input
+      min="0"
+      class="input-entry"
+      [(ngModel)]="entryCount"
+      (input)="entryChnage()"
+      type="number"
+    />
+    <span>Entries</span>
+  </div>
+  <div class="search-box">
+    <input
+      class="search-input"
+      (input)="search($event)"
+      placeholder="Search records"
+    />
+  </div>
+</div>
+<div class="card-list">
+  <!-- <div class="card-header">
+    <span>Domain & Plan Name</span>
+    <span>Storage</span>
+    <span>Monthly Visitor</span>
+    <span>Domains</span>
+    <span>Status</span>
+  </div> -->
+  <app-card *ngFor="let site of currentData" [siteData]="site"></app-card>
+</div>

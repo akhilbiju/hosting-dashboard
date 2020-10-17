@@ -1,0 +1,8 @@
+<div class="progress-container" [ngClass]="{ 'sub-domain': isSubDomain }">
+  <div class="background">
+    <div [style.width]="fillValue" class="progress-bar"></div>
+  </div>
+  <span class="label">{{
+    !isSubDomain ? consumed + " of " + total : consumed
+  }}</span>
+</div>
