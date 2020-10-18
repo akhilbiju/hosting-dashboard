@@ -10,7 +10,6 @@
 
 .grid-item {
   display: flex;
-  align-items: center;
   padding: 5px;
 }
 
@@ -58,4 +57,10 @@
   cursor: pointer;
   outline: none;
   pointer-events: none;
+}
+
+.storage,
+.visitor,
+.status {
+  align-items: center;
 }

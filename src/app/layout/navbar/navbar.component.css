@@ -82,6 +82,10 @@ nav li:hover {
     justify-content: space-around;
     flex-wrap: wrap;
   }
+  nav li {
+    flex: 1;
+    justify-content: center;
+  }
   nav li img {
     margin: 0px;
   }
