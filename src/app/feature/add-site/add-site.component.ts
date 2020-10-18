@@ -10,6 +10,19 @@ import { DataService } from 'src/app/mock-server/data.service';
 export class AddSiteComponent implements OnInit {
   showModal = false;
   masterForm: FormGroup;
+  metaData = {
+    usedStorage: '1gb',
+    domainTag: 'Primary',
+    availableDomains: 10,
+    usedDomains: 1,
+    monthlyVisitor: 0,
+    status: 'active',
+  };
+  subDomainMetaData = {
+    usedStorage: '0gb',
+    domainTag: 'Add-on',
+    monthlyVisitor: 0,
+  };
   @Output() addEvent = new EventEmitter();
 
   get firstSub() {
@@ -82,26 +95,13 @@ export class AddSiteComponent implements OnInit {
   }
 
   addSiteData() {
-    const metaData = {
-      usedStorage: '1gb',
-      domainTag: 'Primary',
-      availableDomains: 10,
-      usedDomains: 1,
-      monthlyVisitor: 0,
-      status: 'active',
-    };
-    const subDomainMetaData = {
-      usedStorage: '0gb',
-      domainTag: 'Add-on',
-      monthlyVisitor: 0,
-    };
-    const domainData = { ...metaData, ...this.masterForm.value };
-    domainData['storage'] = domainData['storage'] + 'gb';
+    const domainData = { ...this.metaData, ...this.masterForm.value };
+    domainData.storage = domainData.storage + 'gb';
     domainData.subDomain = domainData.subDomain.filter((domain) => domain.name);
     for (let index = 0; index < domainData.subDomain.length; index++) {
       domainData.subDomain[index] = {
         ...domainData.subDomain[index],
-        ...subDomainMetaData,
+        ...this.subDomainMetaData,
       };
     }
     this.dataService.addSite(domainData);
