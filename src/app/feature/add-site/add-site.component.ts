@@ -25,6 +25,13 @@ export class AddSiteComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    this.createForm();
+  }
+
+  /**
+   * Create initial form group
+   */
+  createForm() {
     this.masterForm = new FormGroup({
       domain: new FormControl('', Validators.required),
       storage: new FormControl('', Validators.required),
@@ -46,6 +53,7 @@ export class AddSiteComponent implements OnInit {
    * Open modal
    */
   openModal() {
+    this.createForm();
     this.showModal = true;
   }
 
@@ -54,7 +62,6 @@ export class AddSiteComponent implements OnInit {
    */
   close() {
     this.showModal = false;
-    this.masterForm.reset();
   }
 
   /**
