@@ -8,14 +8,14 @@ export class DataService {
   currentSiteDetails = [
     {
       id: 1,
-      domain: 'example.xom',
+      domain: 'example.com',
       storage: '500gb',
       usedStorage: '200gb',
       domainTag: 'Primary',
       availableDomains: 10,
       usedDomains: 3,
       monthlyVisitorCapacity: 10000,
-      monthlyVisitor: 100,
+      monthlyVisitor: 2000,
       subDomain: [
         {
           id: 11,
