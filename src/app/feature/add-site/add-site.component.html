@@ -59,7 +59,7 @@
       <div class="dynamic-fields">
         <div *ngFor="let batch of otherSub; let i = index" [formGroup]="batch">
           <input formControlName="name" />
-          <span (click)="deleteSub(i)" class="delete-sub">&times;</span>
+          <span (click)="deleteSub(i + 1)" class="delete-sub">&times;</span>
         </div>
       </div>
       <button class="add-subdomain" (click)="addSub()">Add More</button>
