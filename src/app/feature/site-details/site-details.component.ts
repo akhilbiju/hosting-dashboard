@@ -48,7 +48,7 @@ export class SiteDetailsComponent implements OnInit {
   search(event) {
     const keyWord = event.target.value;
     this.currentData = this.siteData.filter((domainData: any) =>
-      domainData.domain.includes(keyWord)
+      domainData.domain.toLowerCase().includes(keyWord.toLowerCase())
     );
   }
 }
