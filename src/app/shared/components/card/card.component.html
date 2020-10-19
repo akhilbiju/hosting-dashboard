@@ -25,7 +25,7 @@
   </div>
   <div class="status grid-item">
     <button
-      *ngIf="siteData.status"
+      *ngIf="siteData.status && !siteData.subDomain?.length"
       class="other"
       [ngClass]="{ active: siteData.status === 'active' }"
     >
@@ -46,6 +46,7 @@
         isSubDomain="true"
         [total]="siteData.storage"
         [consumed]="subdomain.usedStorage"
+        [other]="subdomain.domainTag !== 'primary'"
       ></app-progress-bar>
     </div>
     <div class="visitor grid-item">
@@ -53,6 +54,7 @@
         isSubDomain="true"
         [total]="siteData.monthlyVisitorCapacity"
         [consumed]="subdomain.monthlyVisitor"
+        [other]="subdomain.domainTag !== 'primary'"
       ></app-progress-bar>
     </div>
     <div class="domain grid-item">

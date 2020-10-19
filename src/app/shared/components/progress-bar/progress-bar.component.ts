@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProgressBarComponent implements OnInit {
   @Input() total;
   @Input() consumed;
+  @Input() other;
   @Input() isSubDomain;
   fillValue = '0%';
 

@@ -14,6 +14,10 @@
   border-radius: 5px;
 }
 
+.other-progress {
+  background: #ffae3e;
+}
+
 .label {
   font-size: 10px;
   font-weight: 600;
