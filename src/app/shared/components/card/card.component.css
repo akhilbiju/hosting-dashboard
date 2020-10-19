@@ -31,7 +31,20 @@
 
 .plan-name {
   font-weight: bold;
+  font-size: 14px;
 }
+
+.plan-label {
+  margin-top: 5px;
+  color: #929292;
+}
+
+.plan-badge {
+  height: 17px;
+  margin-right: 5px;
+  transform: translateY(4px);
+}
+
 .other {
   color: #ffae3e;
   background: #fbe691;
@@ -39,6 +52,8 @@
   border: none;
   cursor: pointer;
   pointer-events: none;
+  font-weight: bold;
+  border-radius: 5px;
 }
 .active {
   padding: 5px 10px;
@@ -48,6 +63,8 @@
   cursor: pointer;
   outline: none;
   pointer-events: none;
+  font-weight: bold;
+  border-radius: 5px;
 }
 .primary {
   padding: 5px 10px;
@@ -58,7 +75,9 @@
   outline: none;
   pointer-events: none;
 }
-
+.domain {
+  align-items: center;
+}
 .storage,
 .visitor,
 .status {

@@ -1,7 +1,9 @@
 <div class="grid-container">
   <div class="plan grid-item">
     <div class="plan-name">{{ siteData.domain }}</div>
-    <div class="plan-label">Professional plan</div>
+    <div class="plan-label">
+      <img class="plan-badge" src="assets/images/medal.png" />Professional plan
+    </div>
   </div>
   <div class="storage grid-item">
     <app-progress-bar
@@ -27,7 +29,7 @@
       class="other"
       [ngClass]="{ active: siteData.status === 'active' }"
     >
-      {{ siteData.status === "active" ? "Active" : siteData.status }}
+      {{ siteData.status | titlecase }}
     </button>
   </div>
   <ng-container *ngFor="let subdomain of siteData.subDomain">
@@ -59,7 +61,7 @@
         class="other"
         [ngClass]="{ primary: subdomain.domainTag === 'primary' }"
       >
-        {{ subdomain.domainTag }}
+        {{ subdomain.domainTag | titlecase }}
       </button>
     </div>
     <div class="status grid-item">

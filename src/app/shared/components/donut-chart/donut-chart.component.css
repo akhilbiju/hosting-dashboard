@@ -20,3 +20,7 @@ svg {
   stroke-dasharray: 126;
   stroke-dashoffset: 0;
 }
+
+.item p {
+  color: #5b7cfd;
+}
