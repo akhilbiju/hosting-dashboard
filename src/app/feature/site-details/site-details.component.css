@@ -36,9 +36,11 @@
 }
 
 .card-header {
-  display: flex;
   background: #ececec;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .card-header span {
@@ -46,10 +48,16 @@
   padding: 10px 5px;
   font-size: 12px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .search-input {
   outline: none;
   padding: 5px;
   border: none;
+  background: url(/assets/images/search.png) 0% no-repeat;
+  background-size: 12px;
+  padding-left: 15px;
 }

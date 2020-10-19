@@ -50,12 +50,12 @@ export class DataService {
       id: 3,
       domain: 'demo.com',
       storage: '500gb',
-      usedStorage: '380gb',
+      usedStorage: '430gb',
       domainTag: 'Primary',
       availableDomains: 10,
       usedDomains: 4,
       monthlyVisitorCapacity: 10000,
-      monthlyVisitor: 6500,
+      monthlyVisitor: 5300,
       subDomain: [
         {
           id: 31,
@@ -70,13 +70,6 @@ export class DataService {
           usedStorage: '10gb',
           domainTag: 'Add-on',
           monthlyVisitor: 1100,
-        },
-        {
-          id: 33,
-          name: 'test.demo.com',
-          usedStorage: '50gb',
-          domainTag: 'Add-on',
-          monthlyVisitor: 1200,
         },
         {
           id: 34,
