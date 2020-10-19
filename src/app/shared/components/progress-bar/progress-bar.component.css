@@ -7,11 +7,11 @@
 .progress-bar {
   height: 14px;
   background: #33cc86;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .background {
   background: #e3e5e8;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .other-progress {
