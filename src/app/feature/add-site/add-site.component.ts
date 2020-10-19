@@ -11,7 +11,7 @@ export class AddSiteComponent implements OnInit {
   showModal = false;
   masterForm: FormGroup;
   metaData = {
-    usedStorage: '1gb',
+    usedStorage: '0gb',
     domainTag: 'Primary',
     availableDomains: 10,
     usedDomains: 1,

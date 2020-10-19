@@ -48,6 +48,7 @@
 .other {
   color: #ffae3e;
   background: #fbe691;
+  font-size: 12px;
   padding: 5px 10px;
   border: none;
   cursor: pointer;
@@ -58,6 +59,7 @@
 .active {
   padding: 5px 10px;
   color: #5fbdbb;
+  font-size: 12px;
   background: #cdf5f4;
   border: none;
   cursor: pointer;
@@ -68,6 +70,7 @@
 }
 .primary {
   padding: 5px 10px;
+  font-size: 12px;
   color: #5b7cfd;
   background: #dfe0fe;
   border: none;

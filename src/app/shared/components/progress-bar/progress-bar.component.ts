@@ -22,5 +22,8 @@ export class ProgressBarComponent implements OnInit {
     } else {
       this.fillValue = (this.consumed / this.total) * 100 + '%';
     }
+    if (this.fillValue === 'NaN%') {
+      this.fillValue = '0px';
+    }
   }
 }
