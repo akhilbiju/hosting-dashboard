@@ -62,7 +62,13 @@
           <span (click)="deleteSub(i + 1)" class="delete-sub">&times;</span>
         </div>
       </div>
-      <button class="add-subdomain" (click)="addSub()">Add More</button>
+      <button
+        [disabled]="getSubDomainArray.length > 8"
+        class="add-subdomain"
+        (click)="addSub()"
+      >
+        Add More
+      </button>
     </div>
     <div class="footer">
       <button (click)="close()" class="button secondary-button">Close</button>

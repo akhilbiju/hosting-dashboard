@@ -25,14 +25,16 @@ export class AddSiteComponent implements OnInit {
   };
   @Output() addEvent = new EventEmitter();
 
+  get getSubDomainArray() {
+    return this.masterForm.get('subDomain') as FormArray;
+  }
+
   get firstSub() {
-    const listSub = this.masterForm.get('subDomain') as FormArray;
-    return listSub.controls[0];
+    return this.getSubDomainArray.controls[0];
   }
 
   get otherSub() {
-    const listSub = this.masterForm.get('subDomain') as FormArray;
-    return listSub.controls.slice(1);
+    return this.getSubDomainArray.controls.slice(1);
   }
 
   constructor(private dataService: DataService) {}
@@ -104,6 +106,7 @@ export class AddSiteComponent implements OnInit {
         ...this.subDomainMetaData,
       };
     }
+    domainData.usedDomains += domainData.subDomain.length;
     this.dataService.addSite(domainData);
     this.addEvent.emit();
     this.close();
