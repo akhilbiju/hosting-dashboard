@@ -1,6 +1,6 @@
 .item {
   position: relative;
-  transform: translateX(-15px);
+  transform: translateX(-10px);
 }
 
 .item p {
