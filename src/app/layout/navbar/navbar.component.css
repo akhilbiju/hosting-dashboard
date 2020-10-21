@@ -21,11 +21,14 @@
 
 .name {
   margin-bottom: 0px;
+  font-size: 20px;
 }
 
 .email {
   font-size: 10px;
   color: #f7f7f766;
+  margin-top: 5px;
+  font-size: 15px;
 }
 
 .details p {

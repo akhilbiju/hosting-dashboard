@@ -4,6 +4,7 @@
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Patrick Hand", cursive;
 }
 
 .add-button {
@@ -49,7 +50,7 @@
 .popup h3 {
   margin: 0px;
   color: #333;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Patrick Hand", cursive;
 }
 .popup .close {
   font-size: 30px;
@@ -120,6 +121,7 @@
   height: 30px;
   outline: none;
   margin-top: 5px;
+  font-family: "Patrick Hand", cursive;
 }
 
 @media screen and (max-width: 700px) {

@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
 html,
 body {
   background: #e3e5e8;
   height: 100%;
   margin: 0px;
   overflow: hidden;
+  font-family: "Patrick Hand", cursive;
 }
