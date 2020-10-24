@@ -10,6 +10,7 @@ export class SiteDetailsComponent implements OnInit {
   entryCount = 10;
   siteData = [];
   currentData = [];
+  searchValue = '';
 
   constructor(private dataService: DataService) {}
 
@@ -19,12 +20,23 @@ export class SiteDetailsComponent implements OnInit {
   getData() {
     this.dataService.getSiteDetails().subscribe((data) => {
       this.siteData = data;
-      this.currentData = data;
+      this.handleNewData();
     });
   }
 
   ngOnInit(): void {
     this.getData();
+  }
+
+  /**
+   * Add new data to table
+   */
+  handleNewData() {
+    this.searchValue = '';
+    if (this.entryCount < this.siteData.length) {
+      this.entryCount = this.siteData.length;
+    }
+    this.currentData = this.siteData;
   }
 
   /**
@@ -35,9 +47,12 @@ export class SiteDetailsComponent implements OnInit {
   }
 
   /**
-   * Handle entry per change event
+   * Handle entries per page change event
    */
-  entryChnage() {
+  entryChange() {
+    this.searchValue = '';
+    const isValidNum = !isNaN(this.entryCount) && this.entryCount > 0;
+    this.entryCount = isValidNum ? this.entryCount : 0;
     this.currentData = this.siteData.slice(0, this.entryCount);
   }
 
@@ -47,8 +62,9 @@ export class SiteDetailsComponent implements OnInit {
    */
   search(event) {
     const keyWord = event.target.value;
-    this.currentData = this.siteData.filter((domainData: any) =>
+    const searchData = this.siteData.filter((domainData: any) =>
       domainData.domain.toLowerCase().includes(keyWord.toLowerCase())
     );
+    this.currentData = searchData.slice(0, this.entryCount);
   }
 }

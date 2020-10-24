@@ -9,13 +9,14 @@
       min="0"
       class="input-entry"
       [(ngModel)]="entryCount"
-      (input)="entryChnage()"
+      (input)="entryChange()"
       type="number"
     />
     <span>Entries</span>
   </div>
   <div class="search-box">
     <input
+      [(ngModel)]="searchValue"
       class="search-input"
       (input)="search($event)"
       placeholder="Search records"
